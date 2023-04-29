@@ -50,7 +50,7 @@
 				</ul>
 			</nav>
 		</div>
-		
+
 		<section id="top">
 			<article>
 				<p>We love music, and we want new musicians to be successful. You can trust us to only produce top notch music, and promote bands that are worth listening to. The music industry has changed, and we are here to help!</p>
@@ -303,8 +303,29 @@
 
 		});
 
-	</script>
+        <!-- jQuery for opening and closing menu -->
+		$('#mobilenav h2').click(function () {
+			$('#mainnav').slideToggle('slow');
+		});
 
+		function showHideMenu() {
+
+			var viewportWidth = $(window).width();
+
+			if (viewportWidth > 600) {
+				$('#mainnav').show();
+			} else {
+				$('#mainnav').hide();
+			}
+		}
+
+		showHideMenu();
+		$(window).resize(function () {
+				showHideMenu();
+			});
+	</script>
+  
+	
 </body>
 
 </html>
